@@ -29,6 +29,12 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/pspdfkit/dist/pspdfkit-lib",
+                "output": "./assets/pspdfkit-lib"
               }
             ],
             "styles": [
@@ -38,18 +44,9 @@
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
-                }
-              ],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
               "outputHashing": "all"
             },
             "development": {
